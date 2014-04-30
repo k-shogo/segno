@@ -8,9 +8,9 @@ Gem::Specification.new do |spec|
   spec.version       = BBitMinHash::VERSION
   spec.authors       = ["Shogo Kawaguchi"]
   spec.email         = ["platycod0n.ramosa@gmail.com"]
-  spec.summary       = %q{TODO: Write a short summary. Required.}
-  spec.description   = %q{TODO: Write a longer description. Optional.}
-  spec.homepage      = ""
+  spec.summary       = %q{An implementation of the b bit MinHash algorithm in ruby}
+  spec.description   = %q{An implementation of the b bit MinHash algorithm in ruby}
+  spec.homepage      = "https://github.com/jmhodges/minhash"
   spec.license       = "MIT"
 
   spec.add_runtime_dependency 'murmurhash3'
