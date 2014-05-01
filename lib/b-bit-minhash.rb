@@ -11,11 +11,11 @@ module BBitMinHash
   end
 
   def self.method_missing(method_name, *args, &block)
-    return super unless client.respond_to?(method_name)
-    client.send(method_name, *args, &block)
+    return super unless generator.respond_to?(method_name)
+    generator.send(method_name, *args, &block)
   end
 
   def self.respond_to?(method_name, include_private = false)
-    return client.respond_to?(method_name, include_private) || super
+    return generator.respond_to?(method_name, include_private) || super
   end
 end
