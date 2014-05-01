@@ -1,6 +1,8 @@
 require 'b-bit-minhash/version'
 require 'b-bit-minhash/configuration'
 require 'b-bit-minhash/generator'
+require 'b-bit-MinHash/hash_vec'
+require 'json'
 require 'murmurhash3'
 
 module BBitMinHash

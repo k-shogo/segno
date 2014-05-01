@@ -12,6 +12,7 @@ module BBitMinHash
       Configuration::VALID_OPTIONS_KEYS.each do |key|
         send("#{key}=", options[key])
       end
+      self.seed_vec ||= gen_seed self.k
     end
 
   end

@@ -5,7 +5,6 @@ module BBitMinHash
       targets.each do |str|
         hash_values << MurmurHash3::V32.str_hash(str, seed)
       end
-      p hash_values
       hash_values.min
     end
 
@@ -14,8 +13,8 @@ module BBitMinHash
     end
 
     def bbit_minhash_vec targets
-      seeds = gen_seed k
-      seeds.map{|seed| bbit_minhash targets, seed}
+      vec = seed_vec.map{|seed| bbit_minhash targets, seed}
+      BBitMinHash::HashVec.new self.b, self.k, vec
     end
   end
 end

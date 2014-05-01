@@ -4,12 +4,14 @@ module BBitMinHash
     VALID_OPTIONS_KEYS = [
       :b,
       :k,
-      :seed
+      :seed,
+      :seed_vec
     ].freeze
 
     DEFAULT_B = 1
     DEFAULT_K = 128
     DEFAULT_SEED = 2090358822
+    DEFAULT_SEED_VEC = nil
 
     attr_accessor *VALID_OPTIONS_KEYS
 
@@ -32,6 +34,7 @@ module BBitMinHash
       self.b    = DEFAULT_B
       self.k    = DEFAULT_K
       self.seed = DEFAULT_SEED
+      self.seed_vec = DEFAULT_SEED_VEC
       self
     end
   end
