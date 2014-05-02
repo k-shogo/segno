@@ -1,5 +1,5 @@
 module Segno
-  class HashVec
+  class Hash
     attr_accessor :vec
     VALID_SERIALIZE_PATTERN = /\A(?<b>[0-9]{1,})\.(?<k>[0-9]{1,})\.(?<hash>[0-9a-f]{1,})\z/
 

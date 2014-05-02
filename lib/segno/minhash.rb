@@ -12,9 +12,9 @@ module Segno
       sprintf("%0#{b}d", minhash(targets, seed).to_s(2))[-b..-1]
     end
 
-    def bbit_minhash_vec targets
+    def hash targets
       vec = seed_vec.map{|seed| bbit_minhash targets, seed}
-      Segno::HashVec.new vec
+      Segno::Hash.new vec
     end
   end
 end

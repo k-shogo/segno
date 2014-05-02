@@ -1,5 +1,4 @@
 module Segno
-
   module Configuration
     VALID_OPTIONS_KEYS = [
       :b,

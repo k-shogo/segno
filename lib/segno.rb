@@ -1,8 +1,7 @@
 require 'segno/version'
 require 'segno/configuration'
 require 'segno/generator'
-require 'segno/hash_vec'
-require 'json'
+require 'segno/hash'
 require 'murmurhash3'
 
 module Segno
