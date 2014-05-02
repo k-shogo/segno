@@ -1,10 +1,9 @@
 module BBitMinHash
   class HashVec
-    attr_accessor :b, :k, :vec
+    attr_accessor :vec
+    VALID_SERIALIZE_PATTERN = /\A(?<b>[0-9]{1,})\.(?<k>[0-9]{1,})\.(?<hash>[0-9a-f]{1,})\z/
 
-    def initialize b, k, vec
-      @b = b
-      @k = k
+    def initialize vec
       @vec = vec
     end
 
@@ -12,20 +11,26 @@ module BBitMinHash
       @vec.join.to_i(2).to_s(16)
     end
 
+    def b
+      @vec.first.size
+    end
+
+    def k
+      @vec.size
+    end
+
     def self.dump hash_vec
-      {
-        b:   hash_vec.b,
-        k:   hash_vec.k,
-        vec: hash_vec.to_s
-      }.to_json
+      [hash_vec.b, hash_vec.k, hash_vec.to_s].join('.')
     end
 
     def self.load string
-      param = JSON.load(string)
-      b = param['b']
-      k = param['k']
-      vec = sprintf("%0#{b*k}d", param['vec'].to_i(16).to_s(2)).scan(/.{1,#{b}}/)
-      new b, k, vec
+      if key = string.match(VALID_SERIALIZE_PATTERN)
+        b = key['b'].to_i
+        k = key['k'].to_i
+        hash = key['hash']
+        vec = sprintf("%0#{b*k}d", hash.to_i(16).to_s(2)).scan(/.{1,#{b}}/)
+        new vec
+      end
     end
   end
 end

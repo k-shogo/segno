@@ -14,7 +14,7 @@ module BBitMinHash
 
     def bbit_minhash_vec targets
       vec = seed_vec.map{|seed| bbit_minhash targets, seed}
-      BBitMinHash::HashVec.new self.b, self.k, vec
+      BBitMinHash::HashVec.new vec
     end
   end
 end
