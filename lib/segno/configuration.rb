@@ -1,4 +1,4 @@
-module BBitMinHash
+module Segno
 
   module Configuration
     VALID_OPTIONS_KEYS = [

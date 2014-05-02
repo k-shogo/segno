@@ -4,7 +4,7 @@ SimpleCov.start do
   add_filter 'vendor'
 end
 
-require 'b-bit-minhash'
+require 'segno'
 require 'rspec'
 
 RSpec.configure do |config|

@@ -1,4 +1,4 @@
-module BBitMinHash
+module Segno
   module MinHash
     def minhash targets, seed
       hash_values = []
@@ -14,7 +14,7 @@ module BBitMinHash
 
     def bbit_minhash_vec targets
       vec = seed_vec.map{|seed| bbit_minhash targets, seed}
-      BBitMinHash::HashVec.new vec
+      Segno::HashVec.new vec
     end
   end
 end

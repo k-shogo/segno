@@ -1,6 +1,6 @@
-require 'b-bit-minhash/seed'
-require 'b-bit-minhash/minhash'
-module BBitMinHash
+require 'segno/seed'
+require 'segno/minhash'
+module Segno
   class Generator
     include Seed
     include MinHash
@@ -8,7 +8,7 @@ module BBitMinHash
     attr_accessor *Configuration::VALID_OPTIONS_KEYS
 
     def initialize(options = {})
-      options = BBitMinHash.options.merge(options)
+      options = Segno.options.merge(options)
       Configuration::VALID_OPTIONS_KEYS.each do |key|
         send("#{key}=", options[key])
       end

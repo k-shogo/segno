@@ -1,15 +1,15 @@
-require 'b-bit-minhash/version'
-require 'b-bit-minhash/configuration'
-require 'b-bit-minhash/generator'
-require 'b-bit-MinHash/hash_vec'
+require 'segno/version'
+require 'segno/configuration'
+require 'segno/generator'
+require 'segno/hash_vec'
 require 'json'
 require 'murmurhash3'
 
-module BBitMinHash
+module Segno
   extend Configuration
 
   def self.generator(options = {})
-    BBitMinHash::Generator.new(options)
+    Segno::Generator.new(options)
   end
 
   def self.method_missing(method_name, *args, &block)

@@ -1,16 +1,16 @@
 # coding: utf-8
 lib = File.expand_path('../lib', __FILE__)
 $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
-require 'b-bit-minhash/version'
+require 'segno/version'
 
 Gem::Specification.new do |spec|
-  spec.name          = "b-bit-minhash"
-  spec.version       = BBitMinHash::VERSION
+  spec.name          = "segno"
+  spec.version       = Segno::VERSION
   spec.authors       = ["Shogo Kawaguchi"]
   spec.email         = ["platycod0n.ramosa@gmail.com"]
   spec.summary       = %q{An implementation of the b bit MinHash algorithm in ruby}
   spec.description   = %q{An implementation of the b bit MinHash algorithm in ruby}
-  spec.homepage      = "https://github.com/jmhodges/minhash"
+  spec.homepage      = "https://github.com/k-shogo/segno"
   spec.license       = "MIT"
 
   spec.add_runtime_dependency 'murmurhash3'

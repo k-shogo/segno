@@ -1,4 +1,4 @@
-# Minhash
+# Segno
 
 An implementation of the b bit MinHash algorithm in ruby
 
@@ -6,7 +6,7 @@ An implementation of the b bit MinHash algorithm in ruby
 
 Add this line to your application's Gemfile:
 
-    gem 'b-bit-minhash'
+    gem 'segno'
 
 And then execute:
 
@@ -14,7 +14,7 @@ And then execute:
 
 Or install it yourself as:
 
-    $ gem install b-bit-minhash
+    $ gem install segno
 
 ## Usage
 
