@@ -19,6 +19,11 @@ module BBitMinHash
       @vec.size
     end
 
+    def jaccard hash_vec
+      n = [self.vec, hash_vec.vec].transpose.map{|v| v[0]==v[1]}.select{|x| x}.size
+      (2 ** self.b * Rational(n,k) - 1) / (2 ** self.b - 1)
+    end
+
     def self.dump hash_vec
       [hash_vec.b, hash_vec.k, hash_vec.to_s].join('.')
     end
